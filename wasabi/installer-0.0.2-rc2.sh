@@ -1,14 +1,20 @@
 #!/bin/bash
 
+VERSION="v0.0.2-rc1"
+
+DIRNAME="wasabi_"$VERSION
+
 # Clone the repository from GitHub
-git clone -b 0.0.2-rc1 git@github.com:practo/wasabi.git
+git clone --depth 1 -b $VERSION git@github.com:practo/wasabi.git $DIRNAME
 
 # Change directory into the cloned repository
-cd wasabi
+cd $DIRNAME
 
 # Run the setup.sh script
 sh setup.sh
 
 # Delete the cloned repository
 cd ..
-rm -rf wasabi
+
+echo "Removing $DIRNAME"
+rm -rf $DIRNAME
