@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 VERSION="v0.0.1-rc3"
 
@@ -16,5 +17,7 @@ sh setup.sh
 # Delete the cloned repository
 cd ..
 
-echo "Removing $DIRNAME"
+echo "Removing temporary directory $DIRNAME"
 rm -rf $DIRNAME
+
+echo "Wasabi Installed Successfully"
